@@ -1,0 +1,596 @@
+/* ===========================================
+   HARSHAAA PORTFOLIO - KEYBOARD STYLE
+   Dark theme with mechanical keyboard navigation
+   =========================================== */
+
+/* ============= ROOT VARIABLES ============= */
+:root {
+    --bg-dark: #0a0a0a;
+    --bg-darker: #050505;
+    --text-primary: #ffffff;
+    --text-secondary: #a3a3a3;
+    --text-tertiary: #525252;
+    --border-color: #262626;
+    --accent: #3b82f6;
+}
+
+/* ============= GLOBAL STYLES ============= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.7;
+    background: #171717;
+    color: #e5e5e5;
+}
+
+/* ============= KEYBOARD NAVIGATION ============= */
+.keyboard-grid {
+    margin-top: 3rem;
+}
+
+.keyboard-key {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 4px 0 0 rgba(0, 0, 0, 0.3),
+        0 6px 12px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    user-select: none;
+}
+
+.keyboard-key:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 0 0 1px rgba(255, 255, 255, 0.2),
+        0 6px 0 0 rgba(0, 0, 0, 0.3),
+        0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.keyboard-key:active {
+    transform: translateY(2px);
+    box-shadow: 
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 2px 0 0 rgba(0, 0, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.keyboard-key-wide {
+    grid-column: span 2;
+}
+
+.key-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.key-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.25rem;
+    font-family: 'Space Mono', monospace;
+}
+
+.key-subtitle {
+    font-size: 0.625rem;
+    text-transform: lowercase;
+    opacity: 0.7;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+/* ============= SECTION STYLES ============= */
+.section-padding {
+    padding: 8rem 0;
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 5rem 0;
+    }
+}
+
+.section-number {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.875rem;
+    color: #525252;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: white;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* ============= PROSE (Text Content) ============= */
+.prose-custom {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #a3a3a3;
+}
+
+.prose-custom p {
+    margin-bottom: 1.5rem;
+}
+
+.prose-custom strong {
+    color: white;
+    font-weight: 600;
+}
+
+/* ============= TECH BADGES ============= */
+.tech-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    color: #a3a3a3;
+    transition: all 0.2s ease;
+    font-family: 'Space Mono', monospace;
+}
+
+.tech-badge:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* ============= WORK ITEMS ============= */
+.work-item {
+    transition: transform 0.3s ease;
+}
+
+.work-item:hover {
+    transform: translateY(-4px);
+}
+
+.work-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    background: #262626;
+    aspect-ratio: 16/10;
+}
+
+.work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.work-item:hover .work-image img {
+    transform: scale(1.05);
+}
+
+.work-info h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.work-info p {
+    font-size: 0.875rem;
+    color: #737373;
+    margin-bottom: 0.75rem;
+}
+
+.work-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #a3a3a3;
+    font-family: 'Space Mono', monospace;
+}
+
+/* ============= PROJECT ROWS ============= */
+.project-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.project-row-reverse {
+    direction: rtl;
+}
+
+.project-row-reverse > * {
+    direction: ltr;
+}
+
+@media (max-width: 768px) {
+    .project-row,
+    .project-row-reverse {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        direction: ltr;
+    }
+}
+
+.project-screenshot {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #262626;
+}
+
+/* ============= SPORTS ============= */
+.sport-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.sport-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
+}
+
+.sport-emoji {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.sport-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.sport-card p {
+    font-size: 0.875rem;
+    color: #737373;
+    margin-bottom: 1rem;
+}
+
+.sport-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.sport-tags span {
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #a3a3a3;
+}
+
+.sports-photo {
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 1;
+    background: #262626;
+}
+
+.sports-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.sports-photo:hover img {
+    transform: scale(1.1);
+}
+
+/* ============= VEHICLES ============= */
+.vehicle-showcase {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.vehicle-showcase-reverse {
+    direction: rtl;
+}
+
+.vehicle-showcase-reverse > * {
+    direction: ltr;
+}
+
+@media (max-width: 768px) {
+    .vehicle-showcase,
+    .vehicle-showcase-reverse {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        direction: ltr;
+    }
+}
+
+.vehicle-image-large {
+    overflow: hidden;
+    border-radius: 8px;
+    background: #262626;
+}
+
+.vehicle-image-large img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.vehicle-showcase:hover .vehicle-image-large img {
+    transform: scale(1.05);
+}
+
+.vehicle-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #a3a3a3;
+    font-family: 'Space Mono', monospace;
+}
+
+.trip-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #262626;
+}
+
+.trip-item img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.trip-item:hover img {
+    transform: scale(1.1);
+}
+
+.trip-info {
+    padding: 1.5rem;
+}
+
+.trip-info h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.trip-info p {
+    font-size: 0.875rem;
+    color: #737373;
+}
+
+/* ============= TIMELINE ============= */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-entry {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+}
+
+.timeline-entry::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid #171717;
+}
+
+.timeline-year {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    color: #525252;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-entry h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.timeline-entry p {
+    color: #a3a3a3;
+    font-size: 1rem;
+}
+
+/* ============= VALUES ============= */
+.value-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.value-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
+}
+
+.value-emoji {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.value-item h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.value-item p {
+    font-size: 0.875rem;
+    color: #737373;
+}
+
+.quote-box {
+    border-left: 3px solid rgba(255, 255, 255, 0.2);
+    padding-left: 2rem;
+    max-width: 800px;
+}
+
+/* ============= CONTACT FORM ============= */
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.form-input::placeholder {
+    color: #525252;
+}
+
+.submit-button {
+    padding: 1rem 2rem;
+    background: white;
+    color: #171717;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.submit-button:hover {
+    background: #e5e5e5;
+    transform: translateY(-2px);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+/* ============= ANIMATIONS ============= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* ============= RESPONSIVE ============= */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .keyboard-key {
+        padding: 1.25rem 0.75rem;
+    }
+    
+    .key-label {
+        font-size: 0.75rem;
+    }
+    
+    .key-icon {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .prose-custom {
+        font-size: 1rem;
+    }
+    
+    .vehicle-image-large img {
+        height: 250px;
+    }
+    
+    .timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-entry {
+        padding-left: 1.5rem;
+    }
+}
