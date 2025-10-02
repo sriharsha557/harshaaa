@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initContactForm();
     initKeyboardNavigation();
+    initAudioControl();
 });
 
 // ============= CURRENT YEAR ============= //
@@ -117,7 +118,45 @@ function initKeyboardNavigation() {
         });
     });
 }
-
+// ============= AUDIO CONTROL ============= //
+function initAudioControl() {
+    const audioToggle = document.getElementById('audio-toggle');
+    const audio = document.getElementById('background-audio');
+    
+    if (!audioToggle || !audio) return;
+    
+    // Set initial volume
+    audio.volume = 0.3; // 30% volume for background music
+    
+    audioToggle.addEventListener('click', function() {
+        if (audio.paused) {
+            // Play audio
+            audio.play().then(() => {
+                audioToggle.classList.add('playing');
+                showNotification('Ocean waves music enabled 🌊', 'info');
+            }).catch(error => {
+                console.error('Audio playback failed:', error);
+                showNotification('Could not play audio', 'error');
+            });
+        } else {
+            // Pause audio
+            audio.pause();
+            audioToggle.classList.remove('playing');
+            showNotification('Audio muted', 'info');
+        }
+    });
+    
+    // Handle audio end (though it's looped)
+    audio.addEventListener('ended', function() {
+        audioToggle.classList.remove('playing');
+    });
+    
+    // Handle audio errors
+    audio.addEventListener('error', function(e) {
+        console.error('Audio error:', e);
+        audioToggle.style.display = 'none'; // Hide button if audio fails to load
+    });
+}
 // ============= CONTACT FORM ============= //
 function initContactForm() {
     const form = document.getElementById('contact-form');
