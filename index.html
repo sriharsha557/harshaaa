@@ -26,6 +26,49 @@
             <div class="flex items-center gap-4">
                 <span class="text-xs text-green-400 font-mono hidden md:block">● Available for Freelance</span>
                 <a href="#contact" class="text-sm text-neutral-400 hover:text-white transition">Contact</a>
+                <!-- Audio Control Button -->
+                <button id="audio-toggle" class="audio-toggle" aria-label="Toggle audio">
+                    <svg class="audio-icon audio-muted" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                    <svg class="audio-icon audio-playing" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Background Audio -->
+    <audio id="background-audio" loop>
+        <source src="assets/waves-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Animated Wave Background -->
+    <div class="wave-background">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="wave-parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.02)" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.03)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.04)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(255,255,255,0.05)" />
+            </g>
+        </svg>
+    </div>
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-neutral-900/80 backdrop-blur-md border-b border-neutral-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-lg font-mono font-bold text-white">HARSHAAA</a>
+            <div class="flex items-center gap-4">
+                <span class="text-xs text-green-400 font-mono hidden md:block">● Available for Freelance</span>
+                <a href="#contact" class="text-sm text-neutral-400 hover:text-white transition">Contact</a>
             </div>
         </div>
     </nav>
