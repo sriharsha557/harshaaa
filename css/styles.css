@@ -33,6 +33,7 @@ body {
     position: relative;
     overflow-x: hidden;
 }
+
 /* Minimal particle effect */
 .wave-background {
     position: fixed;
@@ -51,7 +52,6 @@ body {
     0%, 100% { opacity: 0.3; }
     50% { opacity: 0.6; }
 }
-
 
 /* ============= AUDIO CONTROLS ============= */
 .audio-toggle {
@@ -224,6 +224,13 @@ body {
     line-height: 1.2;
 }
 
+.section-subtitle {
+    font-size: 1.125rem;
+    color: #737373;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
 @media (max-width: 768px) {
     .section-title {
         font-size: 2rem;
@@ -246,6 +253,60 @@ body {
     font-weight: 600;
 }
 
+/* ============= HERO CTA BUTTONS ============= */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.cta-button-primary {
+    background: white;
+    color: #171717;
+}
+
+.cta-button-primary:hover {
+    background: #e5e5e5;
+    transform: translateY(-2px);
+}
+
+.cta-button-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-button-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ============= QUICK BADGES ============= */
+.quick-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.quick-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    color: #60a5fa;
+    font-family: 'Space Mono', monospace;
+    font-weight: 500;
+}
+
 /* ============= TECH BADGES ============= */
 .tech-badge {
     display: inline-block;
@@ -263,6 +324,88 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.2);
     color: white;
+}
+
+/* ============= TOOLS SECTION ============= */
+.tools-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.filter-button {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    color: #a3a3a3;
+    font-family: 'Space Mono', monospace;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.filter-button.active {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.4);
+    color: #60a5fa;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.tool-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.tool-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-4px);
+}
+
+.tool-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.tool-category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #a3a3a3;
+    font-family: 'Space Mono', monospace;
+    margin-bottom: 0.75rem;
+}
+
+.tool-meta {
+    font-size: 0.875rem;
+    color: #737373;
+    margin-bottom: 0.5rem;
+}
+
+.tool-note {
+    font-size: 0.875rem;
+    color: #a3a3a3;
+    font-style: italic;
 }
 
 /* ============= WORK ITEMS ============= */
@@ -318,36 +461,28 @@ body {
     font-family: 'Space Mono', monospace;
 }
 
-/* ============= PROJECT ROWS ============= */
-.project-row {
+/* ============= BEYOND WORK SECTION ============= */
+.beyond-category {
+    margin-bottom: 3rem;
+}
+
+.beyond-category h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.beyond-content {
+    font-size: 1rem;
+    color: #a3a3a3;
+    line-height: 1.8;
+}
+
+.beyond-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.project-row-reverse {
-    direction: rtl;
-}
-
-.project-row-reverse > * {
-    direction: ltr;
-}
-
-@media (max-width: 768px) {
-    .project-row,
-    .project-row-reverse {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        direction: ltr;
-    }
-}
-
-.project-screenshot {
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: #262626;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
 /* ============= SPORTS ============= */
@@ -396,24 +531,6 @@ body {
     border-radius: 4px;
     font-size: 0.75rem;
     color: #a3a3a3;
-}
-
-.sports-photo {
-    overflow: hidden;
-    border-radius: 8px;
-    aspect-ratio: 1;
-    background: #262626;
-}
-
-.sports-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.sports-photo:hover img {
-    transform: scale(1.1);
 }
 
 /* ============= VEHICLES ============= */
@@ -467,40 +584,6 @@ body {
     font-size: 0.75rem;
     color: #a3a3a3;
     font-family: 'Space Mono', monospace;
-}
-
-.trip-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    background: #262626;
-}
-
-.trip-item img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.trip-item:hover img {
-    transform: scale(1.1);
-}
-
-.trip-info {
-    padding: 1.5rem;
-}
-
-.trip-info h4 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: white;
-}
-
-.trip-info p {
-    font-size: 0.875rem;
-    color: #737373;
 }
 
 /* ============= TIMELINE ============= */
@@ -686,5 +769,18 @@ body {
     
     .timeline-entry {
         padding-left: 1.5rem;
+    }
+    
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quick-badges {
+        gap: 0.5rem;
+    }
+    
+    .quick-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
     }
 }
