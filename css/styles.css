@@ -1,5 +1,5 @@
 /* ===========================================
-   HARSHAAA PORTFOLIO - KEYBOARD STYLE
+   HARSHA PORTFOLIO - UPDATED STYLES
    Dark theme with video background
    =========================================== */
 
@@ -59,7 +59,6 @@ body {
     object-fit: cover;
 }
 
-/* Subtle overlay for better text readability */
 .video-background::after {
     content: '';
     position: absolute;
@@ -71,11 +70,6 @@ body {
     pointer-events: none;
 }
 
-/* Remove old wave background */
-.wave-background {
-    display: none;
-}
-
 /* ============= TEXT ENHANCEMENT ============= */
 body,
 h1, h2, h3, h4, h5, h6,
@@ -84,12 +78,10 @@ p, span, a, div {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Stronger text shadow for headings */
 h1, h2, h3, .section-title {
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
 }
 
-/* Ensure all content is above video */
 nav, section, footer {
     position: relative;
     z-index: 1;
@@ -112,7 +104,6 @@ nav a:hover {
     color: #00aaff;
 }
 
-/* Available for freelance styling */
 .freelance-status {
     color: #10b981;
     font-weight: 500;
@@ -141,16 +132,11 @@ nav a:hover {
     color: #00aaff;
 }
 
-.audio-toggle:active {
-    transform: translateY(0);
-}
-
 .audio-icon {
     color: #ffffff;
     transition: all 0.3s ease;
 }
 
-/* Show/hide audio icons based on state */
 .audio-muted {
     display: block;
 }
@@ -178,6 +164,40 @@ nav a:hover {
     50% {
         box-shadow: 0 0 0 8px rgba(0, 170, 255, 0);
     }
+}
+
+/* ============= CTA BUTTONS ============= */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.cta-primary {
+    background: linear-gradient(135deg, var(--nav-gradient-start), var(--nav-gradient-end));
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 170, 255, 0.4);
+}
+
+.cta-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
 }
 
 /* ============= KEYBOARD NAVIGATION ============= */
@@ -261,41 +281,41 @@ nav a:hover {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-/* COLORED ACCENT BORDERS */
+/* COLORED ACCENT BORDERS - ENHANCED */
 .home-card {
-    border-left: 3px solid #666 !important;
+    border-left: 5px solid #999 !important;
 }
 
 .designer-card {
-    border-left: 3px solid #4A90E2 !important;
+    border-left: 5px solid #4A90E2 !important;
 }
 
 .engineer-card {
-    border-left: 3px solid #9B59B6 !important;
+    border-left: 5px solid #9B59B6 !important;
 }
 
 .contact-card {
-    border-left: 3px solid #E67E22 !important;
+    border-left: 5px solid #E67E22 !important;
 }
 
 .sport-card {
-    border-left: 3px solid #E74C3C !important;
+    border-left: 5px solid #E74C3C !important;
 }
 
 .cars-card {
-    border-left: 3px solid #F39C12 !important;
+    border-left: 5px solid #F39C12 !important;
 }
 
 .hire-card {
-    border-left: 3px solid #444 !important;
+    border-left: 5px solid #666 !important;
 }
 
 .values-card {
-    border-left: 3px solid #27AE60 !important;
+    border-left: 5px solid #27AE60 !important;
 }
 
 .cv-card {
-    border-left: 3px solid #C0392B !important;
+    border-left: 5px solid #C0392B !important;
 }
 
 /* ============= SECTION STYLES ============= */
@@ -370,6 +390,83 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
+/* ============= FILTER BUTTONS ============= */
+.filter-btn {
+    padding: 0.5rem 1.25rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(5px);
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--nav-gradient-start), var(--nav-gradient-end));
+    border-color: rgba(0, 170, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 170, 255, 0.3);
+}
+
+/* ============= TOOL CARDS ============= */
+.tool-card {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: none;
+}
+
+.tool-card.show {
+    display: block;
+}
+
+.tool-card:hover {
+    background: rgba(0, 68, 102, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 170, 255, 0.3);
+}
+
+.tool-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.tool-category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(0, 68, 102, 0.6);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+
+.tool-years {
+    font-size: 0.875rem;
+    color: #cccccc;
+    margin-bottom: 0.5rem;
+    font-family: 'Space Mono', monospace;
+}
+
+.tool-note {
+    font-size: 0.875rem;
+    color: #e5e5e5;
+    line-height: 1.6;
+}
+
 /* ============= WORK ITEMS ============= */
 .work-item {
     transition: transform 0.3s ease;
@@ -430,44 +527,8 @@ nav a:hover {
     font-family: 'Space Mono', monospace;
 }
 
-/* ============= PROJECT ROWS ============= */
-.project-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 2rem;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-}
-
-.project-row-reverse {
-    direction: rtl;
-}
-
-.project-row-reverse > * {
-    direction: ltr;
-}
-
-@media (max-width: 768px) {
-    .project-row,
-    .project-row-reverse {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        direction: ltr;
-    }
-}
-
-.project-screenshot {
-    width: 100%;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(38, 38, 38, 0.8);
-}
-
-/* ============= SPORTS ============= */
-.sport-card {
+/* ============= BEYOND CARDS ============= */
+.beyond-card {
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
@@ -476,158 +537,30 @@ nav a:hover {
     backdrop-filter: blur(10px);
 }
 
-.sport-card:hover {
+.beyond-card:hover {
     background: rgba(0, 68, 102, 0.6);
     border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 170, 255, 0.3);
 }
 
-.sport-emoji {
+.beyond-emoji {
     font-size: 2.5rem;
     display: block;
     margin-bottom: 1rem;
 }
 
-.sport-card h3 {
+.beyond-card h3 {
     font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     color: white;
 }
 
-.sport-card p {
-    font-size: 0.875rem;
+.beyond-card p {
+    font-size: 0.9rem;
     color: #e5e5e5;
-    margin-bottom: 1rem;
-}
-
-.sport-tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-.sport-tags span {
-    padding: 0.25rem 0.75rem;
-    background: rgba(0, 68, 102, 0.6);
-    border-radius: 4px;
-    font-size: 0.75rem;
-    color: #ffffff;
-}
-
-.sports-photo {
-    overflow: hidden;
-    border-radius: 8px;
-    aspect-ratio: 1;
-    background: rgba(38, 38, 38, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.sports-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.sports-photo:hover img {
-    transform: scale(1.1);
-}
-
-/* ============= VEHICLES ============= */
-.vehicle-showcase {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 2rem;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-}
-
-.vehicle-showcase-reverse {
-    direction: rtl;
-}
-
-.vehicle-showcase-reverse > * {
-    direction: ltr;
-}
-
-@media (max-width: 768px) {
-    .vehicle-showcase,
-    .vehicle-showcase-reverse {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        direction: ltr;
-    }
-}
-
-.vehicle-image-large {
-    overflow: hidden;
-    border-radius: 8px;
-    background: rgba(38, 38, 38, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.vehicle-image-large img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.vehicle-showcase:hover .vehicle-image-large img {
-    transform: scale(1.05);
-}
-
-.vehicle-badge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    background: rgba(0, 68, 102, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    font-size: 0.75rem;
-    color: #ffffff;
-    font-family: 'Space Mono', monospace;
-}
-
-.trip-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    background: rgba(38, 38, 38, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-}
-
-.trip-item img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.trip-item:hover img {
-    transform: scale(1.1);
-}
-
-.trip-info {
-    padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.6);
-}
-
-.trip-info h4 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: white;
-}
-
-.trip-info p {
-    font-size: 0.875rem;
-    color: #e5e5e5;
+    line-height: 1.7;
 }
 
 /* ============= TIMELINE ============= */
@@ -640,9 +573,8 @@ nav a:hover {
 .timeline-entry {
     position: relative;
     margin-bottom: 3rem;
-    padding-left: 2rem;
-    background: rgba(0, 0, 0, 0.3);
     padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     margin-left: 2rem;
     backdrop-filter: blur(10px);
@@ -720,10 +652,9 @@ nav a:hover {
 
 .quote-box {
     border-left: 3px solid rgba(0, 170, 255, 0.6);
-    padding-left: 2rem;
+    padding: 2rem;
     max-width: 800px;
     background: rgba(0, 0, 0, 0.3);
-    padding: 2rem;
     border-radius: 8px;
     backdrop-filter: blur(10px);
 }
@@ -776,6 +707,22 @@ nav a:hover {
     transform: translateY(0);
 }
 
+.social-link {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.social-link:hover {
+    color: #00aaff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
 /* ============= FOOTER ============= */
 footer {
     background: rgba(0, 0, 0, 0.7);
@@ -825,16 +772,16 @@ footer {
         font-size: 1rem;
     }
     
-    .vehicle-image-large img {
-        height: 250px;
-    }
-    
     .timeline {
         padding-left: 1.5rem;
     }
     
     .timeline-entry {
-        padding-left: 1.5rem;
         margin-left: 1.5rem;
+    }
+    
+    .cta-button {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
