@@ -113,8 +113,8 @@ nav a:hover {
 
 .logo-image {
     /* Adjust these values to control your logo size */
-    height: 50px;           /* Change this value: 30px (small), 50px (medium), 70px (large) */
-    max-width: 200px;       /* Maximum width to prevent logo from being too wide */
+    height: 70px;           /* Change this value: 30px (small), 50px (medium), 70px (large) */
+    max-width: auto;       /* Maximum width to prevent logo from being too wide */
     width: auto;            /* Maintains aspect ratio */
     object-fit: contain;    /* Ensures logo fits within the dimensions */
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
