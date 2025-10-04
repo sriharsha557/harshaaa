@@ -790,8 +790,8 @@ nav a:hover {
 /* ============= VALUES ============= */
 .values-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
     margin-top: 4rem;
     perspective: 1000px;
 }
@@ -800,8 +800,8 @@ nav a:hover {
     position: relative;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(0, 170, 255, 0.3);
-    border-radius: 20px;
-    padding: 3rem 2rem;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
@@ -838,17 +838,17 @@ nav a:hover {
 
 .value-icon-wrapper {
     position: relative;
-    width: 140px;
-    height: 140px;
-    margin: 0 auto 1.5rem;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .value-icon {
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
     position: relative;
     z-index: 2;
@@ -890,9 +890,9 @@ nav a:hover {
 }
 
 .value-card h3 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     color: white;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -905,9 +905,9 @@ nav a:hover {
 }
 
 .value-card p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
+    line-height: 1.5;
     transition: color 0.3s ease;
 }
 
@@ -916,24 +916,37 @@ nav a:hover {
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+    .values-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .values-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
     
     .value-card {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1rem;
     }
     
     .value-icon-wrapper {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
     
     .value-icon {
-        width: 64px;
-        height: 64px;
+        width: 56px;
+        height: 56px;
+    }
+}
+
+@media (max-width: 480px) {
+    .values-container {
+        grid-template-columns: 1fr;
     }
 }
 
