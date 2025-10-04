@@ -112,8 +112,11 @@ nav a:hover {
 }
 
 .logo-image {
-    height: 40px;
-    width: auto;
+    /* Adjust these values to control your logo size */
+    height: 50px;           /* Change this value: 30px (small), 50px (medium), 70px (large) */
+    max-width: 200px;       /* Maximum width to prevent logo from being too wide */
+    width: auto;            /* Maintains aspect ratio */
+    object-fit: contain;    /* Ensures logo fits within the dimensions */
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
     transition: all 0.3s ease;
 }
@@ -126,7 +129,15 @@ nav a:hover {
 /* Responsive logo sizing */
 @media (max-width: 768px) {
     .logo-image {
-        height: 32px;
+        height: 40px;       /* Smaller on mobile */
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-image {
+        height: 35px;       /* Even smaller on very small screens */
+        max-width: 120px;
     }
 }
 
