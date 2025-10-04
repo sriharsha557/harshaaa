@@ -104,6 +104,32 @@ nav a:hover {
     color: #00aaff;
 }
 
+/* ============= LOGO STYLES ============= */
+.logo-link {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+    transition: all 0.3s ease;
+}
+
+.logo-link:hover .logo-image {
+    filter: drop-shadow(0 4px 8px rgba(0, 170, 255, 0.6));
+    transform: translateY(-2px);
+}
+
+/* Responsive logo sizing */
+@media (max-width: 768px) {
+    .logo-image {
+        height: 32px;
+    }
+}
+
 .freelance-status {
     color: #10b981;
     font-weight: 500;
