@@ -182,7 +182,6 @@ function initSmoothScroll() {
         });
     });
 }
-}
 
 // ============= SCROLL ANIMATIONS ============= //
 function initScrollAnimations() {
