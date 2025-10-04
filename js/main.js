@@ -425,3 +425,7 @@ if (typeof module !== 'undefined' && module.exports) {
         showNotification
     };
 }
+const sliders = document.querySelectorAll('.work-image-slider');
+sliders.forEach(slider => {
+    // Sets up slider functionality for each one
+});
