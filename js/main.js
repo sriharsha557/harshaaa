@@ -163,20 +163,25 @@ function initSmoothScroll() {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
+            // Skip if href is just "#" or empty
             if (!href || href === '#') return;
             
             e.preventDefault();
             const target = document.querySelector(href);
             
             if (target) {
-                const offsetTop = target.offsetTop - 80;
+                // Get the target's position relative to the document
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = targetPosition - 80; // 80px offset for fixed nav
+                
                 window.scrollTo({
-                    top: offsetTop,
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
             }
         });
     });
+}
 }
 
 // ============= SCROLL ANIMATIONS ============= //
