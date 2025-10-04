@@ -321,7 +321,7 @@ nav a:hover {
 /* ============= SECTION STYLES ============= */
 .section-padding {
     padding: 8rem 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: transparent;
 }
 
 @media (max-width: 768px) {
@@ -417,13 +417,15 @@ nav a:hover {
 
 /* ============= TOOL CARDS ============= */
 .tool-card {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     padding: 1.5rem;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .tool-card.show {
@@ -431,8 +433,8 @@ nav a:hover {
 }
 
 .tool-card:hover {
-    background: rgba(0, 68, 102, 0.5);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(0, 170, 255, 0.4);
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 170, 255, 0.3);
 }
@@ -470,14 +472,20 @@ nav a:hover {
 /* ============= WORK ITEMS ============= */
 .work-item {
     transition: transform 0.3s ease;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     overflow: hidden;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .work-item:hover {
     transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(0, 170, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 170, 255, 0.3);
 }
 
 .work-image {
@@ -529,17 +537,19 @@ nav a:hover {
 
 /* ============= BEYOND CARDS ============= */
 .beyond-card {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     padding: 2rem;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .beyond-card:hover {
-    background: rgba(0, 68, 102, 0.6);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(0, 170, 255, 0.4);
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 170, 255, 0.3);
 }
@@ -574,10 +584,13 @@ nav a:hover {
     position: relative;
     margin-bottom: 3rem;
     padding: 1.5rem;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     margin-left: 2rem;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .timeline-entry::before {
@@ -625,13 +638,16 @@ nav a:hover {
 
 .value-card {
     position: relative;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 40, 60, 0.5) 100%);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(0, 170, 255, 0.3);
     border-radius: 20px;
     padding: 3rem 2rem;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .value-card::before {
@@ -652,6 +668,7 @@ nav a:hover {
 
 .value-card:hover {
     transform: translateY(-12px) scale(1.02);
+    background: rgba(255, 255, 255, 0.15);
     border-color: rgba(0, 170, 255, 0.6);
     box-shadow: 
         0 20px 60px rgba(0, 170, 255, 0.4),
@@ -764,28 +781,34 @@ nav a:hover {
     border-left: 3px solid rgba(0, 170, 255, 0.6);
     padding: 2rem;
     max-width: 800px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 8px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
 /* ============= CONTACT FORM ============= */
 .form-input {
     width: 100%;
     padding: 1rem;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 6px;
     color: white;
     font-size: 1rem;
     font-family: 'Inter', sans-serif;
     transition: all 0.2s ease;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .form-input:focus {
     outline: none;
     border-color: rgba(0, 170, 255, 0.6);
-    background: rgba(0, 68, 102, 0.3);
+    background: rgba(255, 255, 255, 0.15);
     box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.2);
 }
 
@@ -834,8 +857,9 @@ nav a:hover {
 
 /* ============= FOOTER ============= */
 footer {
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
