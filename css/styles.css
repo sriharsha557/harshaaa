@@ -624,32 +624,29 @@ nav a:hover {
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
 }
-
 .value-item:hover {
     background: rgba(0, 68, 102, 0.6);
     border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 170, 255, 0.3);
 }
-
-.value-emoji {
-    font-size: 2.5rem;
+.value-icon {
+    width: 64px;
+    height: 64px;
     display: block;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem;
+    object-fit: contain;
 }
-
 .value-item h3 {
     font-size: 1.125rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: white;
 }
-
 .value-item p {
     font-size: 0.875rem;
     color: #e5e5e5;
 }
-
 .quote-box {
     border-left: 3px solid rgba(0, 170, 255, 0.6);
     padding: 2rem;
