@@ -11,7 +11,62 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initKeyboardNavigation();
     initAudioControl();
+    initVideoBackground();
 });
+
+// ============= VIDEO BACKGROUND ============= //
+function initVideoBackground() {
+    const video = document.getElementById('bg-video');
+    
+    if (!video) return;
+    
+    // Ensure video plays on mobile devices
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    
+    // Handle video load
+    video.addEventListener('loadeddata', function() {
+        console.log('Background video loaded successfully');
+    });
+    
+    // Handle video errors
+    video.addEventListener('error', function(e) {
+        console.error('Video background error:', e);
+        // Optionally hide video container or show fallback
+        const videoContainer = document.querySelector('.video-background');
+        if (videoContainer) {
+            videoContainer.style.display = 'none';
+        }
+    });
+    
+    // Play video (required for some browsers)
+    const playPromise = video.play();
+    
+    if (playPromise !== undefined) {
+        playPromise
+            .then(() => {
+                console.log('Video autoplay started');
+            })
+            .catch(error => {
+                console.log('Video autoplay prevented:', error);
+                // Auto-play was prevented, but video is still visible
+                // User can click anywhere to start it
+                document.body.addEventListener('click', function startVideo() {
+                    video.play();
+                    document.body.removeEventListener('click', startVideo);
+                }, { once: true });
+            });
+    }
+    
+    // Pause video when tab is not visible (performance optimization)
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            video.pause();
+        } else {
+            video.play();
+        }
+    });
+}
 
 // ============= CURRENT YEAR ============= //
 function initCurrentYear() {
@@ -118,6 +173,7 @@ function initKeyboardNavigation() {
         });
     });
 }
+
 // ============= AUDIO CONTROL ============= //
 function initAudioControl() {
     const audioToggle = document.getElementById('audio-toggle');
@@ -157,6 +213,7 @@ function initAudioControl() {
         audioToggle.style.display = 'none'; // Hide button if audio fails to load
     });
 }
+
 // ============= CONTACT FORM ============= //
 function initContactForm() {
     const form = document.getElementById('contact-form');
@@ -259,7 +316,7 @@ function showNotification(message, type = 'success') {
         color: 'white',
         fontWeight: '600',
         fontSize: '0.875rem',
-        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)',
         zIndex: '9999',
         opacity: '0',
         transform: 'translateY(20px)',
@@ -352,6 +409,7 @@ if (typeof module !== 'undefined' && module.exports) {
         initSmoothScroll,
         initScrollAnimations,
         initContactForm,
+        initVideoBackground,
         showNotification
     };
 }
