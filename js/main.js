@@ -1,7 +1,38 @@
 /* ===========================================
-   HARSHAAA PORTFOLIO - MAIN JAVASCRIPT
+   HARSHA PORTFOLIO - UPDATED JAVASCRIPT
    Interactions, animations, and functionality
    =========================================== */
+
+// ============= TOOLS DATA ============= //
+const toolsData = [
+    // Database
+    { tool: "Sybase IQ", category: "Database", years: "5+ years", note: "Columnar database, query optimization" },
+    { tool: "Oracle", category: "Database", years: "4+ years", note: "Enterprise data management" },
+    { tool: "SQL Server", category: "Database", years: "3+ years", note: "T-SQL, stored procedures" },
+    { tool: "PostgreSQL", category: "Database", years: "2+ years", note: "Open-source relational DB" },
+    
+    // BI & Reporting
+    { tool: "Power BI", category: "BI", years: "5+ years", note: "DAX, data modeling, interactive dashboards" },
+    { tool: "Tableau", category: "BI", years: "3+ years", note: "Visual analytics, storytelling" },
+    { tool: "SSRS", category: "BI", years: "4+ years", note: "Enterprise reporting solutions" },
+    
+    // ETL & Data
+    { tool: "Informatica", category: "ETL", years: "5+ years", note: "PowerCenter, data integration" },
+    { tool: "SSIS", category: "ETL", years: "4+ years", note: "SQL Server Integration Services" },
+    { tool: "Data Vault 2.0", category: "ETL", years: "3+ years", note: "Dimensional modeling methodology" },
+    { tool: "Airflow", category: "ETL", years: "2+ years", note: "Workflow orchestration" },
+    
+    // Development
+    { tool: "Python", category: "Development", years: "4+ years", note: "Pandas, NumPy, data science" },
+    { tool: "Streamlit", category: "Development", years: "2+ years", note: "Rapid AI app development" },
+    { tool: "SQL", category: "Development", years: "6+ years", note: "Complex queries, optimization" },
+    { tool: "Git", category: "Development", years: "4+ years", note: "Version control, collaboration" },
+    
+    // Cloud & DevOps
+    { tool: "Azure", category: "Cloud", years: "3+ years", note: "Cloud data solutions" },
+    { tool: "AWS", category: "Cloud", years: "2+ years", note: "S3, Redshift, Lambda" },
+    { tool: "Docker", category: "Cloud", years: "2+ years", note: "Containerization" },
+];
 
 // ============= INITIALIZATION ============= //
 document.addEventListener('DOMContentLoaded', function() {
@@ -12,7 +43,67 @@ document.addEventListener('DOMContentLoaded', function() {
     initKeyboardNavigation();
     initAudioControl();
     initVideoBackground();
+    initToolsSection();
 });
+
+// ============= TOOLS SECTION ============= //
+function initToolsSection() {
+    const toolsGrid = document.getElementById('tools-grid');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    if (!toolsGrid) return;
+    
+    // Render all tools
+    renderTools('all');
+    
+    // Add filter event listeners
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Update active state
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter tools
+            const category = this.dataset.category;
+            renderTools(category);
+        });
+    });
+}
+
+function renderTools(category) {
+    const toolsGrid = document.getElementById('tools-grid');
+    if (!toolsGrid) return;
+    
+    // Filter tools based on category
+    const filteredTools = category === 'all' 
+        ? toolsData 
+        : toolsData.filter(tool => tool.category === category);
+    
+    // Clear grid
+    toolsGrid.innerHTML = '';
+    
+    // Render filtered tools
+    filteredTools.forEach(tool => {
+        const toolCard = document.createElement('div');
+        toolCard.className = 'tool-card show';
+        toolCard.innerHTML = `
+            <h3>${tool.tool}</h3>
+            <span class="tool-category">${tool.category}</span>
+            <p class="tool-years">${tool.years}</p>
+            <p class="tool-note">${tool.note}</p>
+        `;
+        toolsGrid.appendChild(toolCard);
+    });
+    
+    // Trigger fade-in animation
+    setTimeout(() => {
+        toolsGrid.querySelectorAll('.tool-card').forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('fade-in');
+            }, index * 50);
+        });
+    }, 50);
+}
 
 // ============= VIDEO BACKGROUND ============= //
 function initVideoBackground() {
@@ -20,26 +111,21 @@ function initVideoBackground() {
     
     if (!video) return;
     
-    // Ensure video plays on mobile devices
     video.setAttribute('playsinline', '');
     video.setAttribute('webkit-playsinline', '');
     
-    // Handle video load
     video.addEventListener('loadeddata', function() {
         console.log('Background video loaded successfully');
     });
     
-    // Handle video errors
     video.addEventListener('error', function(e) {
         console.error('Video background error:', e);
-        // Optionally hide video container or show fallback
         const videoContainer = document.querySelector('.video-background');
         if (videoContainer) {
             videoContainer.style.display = 'none';
         }
     });
     
-    // Play video (required for some browsers)
     const playPromise = video.play();
     
     if (playPromise !== undefined) {
@@ -49,8 +135,6 @@ function initVideoBackground() {
             })
             .catch(error => {
                 console.log('Video autoplay prevented:', error);
-                // Auto-play was prevented, but video is still visible
-                // User can click anywhere to start it
                 document.body.addEventListener('click', function startVideo() {
                     video.play();
                     document.body.removeEventListener('click', startVideo);
@@ -58,7 +142,6 @@ function initVideoBackground() {
             });
     }
     
-    // Pause video when tab is not visible (performance optimization)
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
             video.pause();
@@ -82,14 +165,13 @@ function initSmoothScroll() {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
-            // Ignore if it's just "#" or empty
             if (!href || href === '#') return;
             
             e.preventDefault();
             const target = document.querySelector(href);
             
             if (target) {
-                const offsetTop = target.offsetTop - 80; // Account for fixed nav
+                const offsetTop = target.offsetTop - 80;
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -115,9 +197,8 @@ function initScrollAnimations() {
         });
     }, observerOptions);
     
-    // Observe all sections and major elements
     const elements = document.querySelectorAll(
-        'section, .work-item, .project-row, .sport-card, .vehicle-showcase, .timeline-entry, .value-item'
+        'section, .work-item, .tool-card, .beyond-card, .timeline-entry, .value-item'
     );
     
     elements.forEach(el => {
@@ -127,20 +208,18 @@ function initScrollAnimations() {
 
 // ============= KEYBOARD NAVIGATION ============= //
 function initKeyboardNavigation() {
-    // Add keyboard shortcuts for navigation
     document.addEventListener('keydown', (e) => {
-        // Only trigger if not typing in an input/textarea
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
             return;
         }
         
         const keyMap = {
             'h': '#home',
-            'd': '#designer',
-            'e': '#engineer',
-            's': '#sportsman',
-            'c': '#contact',
-            'v': '#values'
+            't': '#tools',
+            'd': '#design',
+            'b': '#beyond',
+            'j': '#journey',
+            'c': '#contact'
         };
         
         const target = keyMap[e.key.toLowerCase()];
@@ -157,7 +236,6 @@ function initKeyboardNavigation() {
         }
     });
     
-    // Add visual feedback on keyboard button press
     const keyboardButtons = document.querySelectorAll('.keyboard-key');
     keyboardButtons.forEach(button => {
         button.addEventListener('mousedown', function() {
@@ -181,36 +259,31 @@ function initAudioControl() {
     
     if (!audioToggle || !audio) return;
     
-    // Set initial volume
-    audio.volume = 0.3; // 30% volume for background music
+    audio.volume = 0.3;
     
     audioToggle.addEventListener('click', function() {
         if (audio.paused) {
-            // Play audio
             audio.play().then(() => {
                 audioToggle.classList.add('playing');
-                showNotification('Ocean waves music enabled 🌊', 'info');
+                showNotification('Ocean waves music enabled', 'info');
             }).catch(error => {
                 console.error('Audio playback failed:', error);
                 showNotification('Could not play audio', 'error');
             });
         } else {
-            // Pause audio
             audio.pause();
             audioToggle.classList.remove('playing');
             showNotification('Audio muted', 'info');
         }
     });
     
-    // Handle audio end (though it's looped)
     audio.addEventListener('ended', function() {
         audioToggle.classList.remove('playing');
     });
     
-    // Handle audio errors
     audio.addEventListener('error', function(e) {
         console.error('Audio error:', e);
-        audioToggle.style.display = 'none'; // Hide button if audio fails to load
+        audioToggle.style.display = 'none';
     });
 }
 
@@ -226,7 +299,6 @@ function initContactForm() {
         const submitButton = form.querySelector('.submit-button');
         const originalText = submitButton.textContent;
         
-        // Get form data
         const formData = new FormData(form);
         const data = {
             name: formData.get('name'),
@@ -235,7 +307,6 @@ function initContactForm() {
             message: formData.get('message')
         };
         
-        // Change button state
         submitButton.textContent = 'sending...';
         submitButton.disabled = true;
         
@@ -244,8 +315,7 @@ function initContactForm() {
             // CHANGE THIS: Add your form submission logic
             // ============================================
             
-            // Option 1: Formspree (recommended)
-            // Sign up at https://formspree.io and get your form endpoint
+            // Option 1: Formspree
             /*
             const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
                 method: 'POST',
@@ -256,32 +326,14 @@ function initContactForm() {
             });
             
             if (response.ok) {
-                showNotification('Message sent successfully! 🎉', 'success');
+                showNotification('Message sent successfully!', 'success');
                 form.reset();
             } else {
                 throw new Error('Failed to send message');
             }
             */
             
-            // Option 2: Custom backend endpoint
-            /*
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-            
-            if (response.ok) {
-                showNotification('Message sent successfully! 🎉', 'success');
-                form.reset();
-            } else {
-                throw new Error('Failed to send message');
-            }
-            */
-            
-            // Temporary: Simulate form submission (REMOVE THIS IN PRODUCTION)
+            // Temporary: Simulate form submission
             await new Promise(resolve => setTimeout(resolve, 1500));
             console.log('Form data:', data);
             showNotification('Demo mode: Form data logged to console', 'info');
@@ -299,12 +351,10 @@ function initContactForm() {
 
 // ============= NOTIFICATION SYSTEM ============= //
 function showNotification(message, type = 'success') {
-    // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.textContent = message;
     
-    // Style the notification
     Object.assign(notification.style, {
         position: 'fixed',
         bottom: '2rem',
@@ -325,13 +375,11 @@ function showNotification(message, type = 'success') {
     
     document.body.appendChild(notification);
     
-    // Animate in
     setTimeout(() => {
         notification.style.opacity = '1';
         notification.style.transform = 'translateY(0)';
     }, 100);
     
-    // Remove after 4 seconds
     setTimeout(() => {
         notification.style.opacity = '0';
         notification.style.transform = 'translateY(20px)';
@@ -341,40 +389,7 @@ function showNotification(message, type = 'success') {
     }, 4000);
 }
 
-// ============= PARALLAX EFFECT (Optional) ============= //
-function initParallax() {
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('.parallax');
-        
-        parallaxElements.forEach(element => {
-            const speed = element.dataset.speed || 0.5;
-            element.style.transform = `translateY(${scrolled * speed}px)`;
-        });
-    });
-}
-
-// ============= IMAGE LAZY LOADING ============= //
-function initLazyLoading() {
-    const images = document.querySelectorAll('img[data-src]');
-    
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                observer.unobserve(img);
-            }
-        });
-    });
-    
-    images.forEach(img => imageObserver.observe(img));
-}
-
 // ============= UTILITY FUNCTIONS ============= //
-
-// Debounce function for performance
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -387,7 +402,6 @@ function debounce(func, wait) {
     };
 }
 
-// Check if element is in viewport
 function isInViewport(element) {
     const rect = element.getBoundingClientRect();
     return (
@@ -398,10 +412,10 @@ function isInViewport(element) {
     );
 }
 
-// ============= CONSOLE EASTER EGG ============= //
+// ============= CONSOLE MESSAGE ============= //
 console.log('%c👋 Hey there!', 'font-size: 24px; font-weight: bold; color: #3b82f6;');
 console.log('%cLooking at the code? I like your style.', 'font-size: 14px; color: #a3a3a3;');
-console.log('%cWant to work together? Reach out at: your.email@example.com', 'font-size: 14px; color: #a3a3a3;');
+console.log('%cWant to collaborate? Reach out via the contact form.', 'font-size: 14px; color: #a3a3a3;');
 
 // ============= EXPORT FOR TESTING (Optional) ============= //
 if (typeof module !== 'undefined' && module.exports) {
