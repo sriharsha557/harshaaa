@@ -6,31 +6,29 @@
 // ============= TOOLS DATA ============= //
 const toolsData = [
     // Database
-    { tool: "Sybase IQ", category: "Database", years: "5+ years", note: "Columnar database, query optimization" },
-    { tool: "Oracle", category: "Database", years: "4+ years", note: "Enterprise data management" },
+    { tool: "Sybase IQ", category: "Database", years: "15+ years", note: "Columnar database, query optimization" },
+    { tool: "Oracle", category: "Database", years: "20+ years", note: "Certified DBA" },
     { tool: "SQL Server", category: "Database", years: "3+ years", note: "T-SQL, stored procedures" },
-    { tool: "PostgreSQL", category: "Database", years: "2+ years", note: "Open-source relational DB" },
+    { tool: "DB2", category: "Database", years: "2+ years", note: "Mainframe DB" },
     
     // BI & Reporting
-    { tool: "Power BI", category: "BI", years: "5+ years", note: "DAX, data modeling, interactive dashboards" },
-    { tool: "Tableau", category: "BI", years: "3+ years", note: "Visual analytics, storytelling" },
-    { tool: "SSRS", category: "BI", years: "4+ years", note: "Enterprise reporting solutions" },
+    { tool: "Power BI", category: "BI", years: "2+ years", note: "DAX, data modeling, interactive dashboards" },
+    { tool: "Business Objects", category: "BI", years: "3+ years", note: "Visual analytics, storytelling" },
     
     // ETL & Data
-    { tool: "Informatica", category: "ETL", years: "5+ years", note: "PowerCenter, data integration" },
-    { tool: "SSIS", category: "ETL", years: "4+ years", note: "SQL Server Integration Services" },
-    { tool: "Data Vault 2.0", category: "ETL", years: "3+ years", note: "Dimensional modeling methodology" },
+    { tool: "Informatica", category: "ETL", years: "8+ years", note: "PowerCenter, data integration" },
+    { tool: "Data Warehousing", category: "ETL", years: "2+ years", note: "Dimensional modeling methodology" },
+    { tool: "Data Vault 2.0", category: "ETL", years: "3+ years", note: "Data vaulting methodology" },
     { tool: "Airflow", category: "ETL", years: "2+ years", note: "Workflow orchestration" },
     
     // Development
-    { tool: "Python", category: "Development", years: "4+ years", note: "Pandas, NumPy, data science" },
+    { tool: "Python", category: "Development", years: "2+ years", note: "Pandas, NumPy, data science" },
     { tool: "Streamlit", category: "Development", years: "2+ years", note: "Rapid AI app development" },
-    { tool: "SQL", category: "Development", years: "6+ years", note: "Complex queries, optimization" },
-    { tool: "Git", category: "Development", years: "4+ years", note: "Version control, collaboration" },
+    { tool: "SQL", category: "Development", years: "15+ years", note: "Complex queries, optimization" },
+    { tool: "Git", category: "Development", years: "2+ years", note: "Version control, collaboration" },
     
     // Cloud & DevOps
-    { tool: "Azure", category: "Cloud", years: "3+ years", note: "Cloud data solutions" },
-    { tool: "AWS", category: "Cloud", years: "2+ years", note: "S3, Redshift, Lambda" },
+    { tool: "Azure", category: "Cloud", years: "2+ years", note: "Cloud data solutions" },
     { tool: "Docker", category: "Cloud", years: "2+ years", note: "Containerization" },
 ];
 
