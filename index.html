@@ -200,45 +200,76 @@
             </div>
             
             <!-- Design Work Grid -->
+            <!-- Design Work Grid -->
             <div class="grid md:grid-cols-2 gap-8 mt-16">
                 <!-- Project 1 -->
                 <div class="work-item">
-                    <div class="work-image">
-                        <img src="images/design/apps.jpg" alt="Web & Mobile App Mockups">
+                    <div class="work-image-slider">
+                        <button class="slider-btn slider-btn-prev" aria-label="Previous image">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+            
+                        <div class="slider-container">
+                            <div class="slider-track">
+                                <img src="images/design/apps.jpg" alt="App Mockup 1" class="slider-image active">
+                                <img src="images/design/apps-2.jpg" alt="App Mockup 2" class="slider-image">
+                                <img src="images/design/apps-3.jpg" alt="App Mockup 3" class="slider-image">
+                                <img src="images/design/apps-4.jpg" alt="App Mockup 4" class="slider-image">
+                            </div>
+                        </div>
+            
+                        <button class="slider-btn slider-btn-next" aria-label="Next image">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                
+                        <div class="slider-dots"></div>
                     </div>
+        
                     <div class="work-info">
                         <h3>Web & Mobile App Mockups</h3>
                         <p>user-centered interfaces / intuitive navigation</p>
                         <span class="work-tag">UI/UX Design</span>
                     </div>
                 </div>
-                
+    
                 <!-- Project 2 -->
                 <div class="work-item">
-                    <div class="work-image">
-                        <img src="images/design/presentations.jpg" alt="Presentations">
+                    <div class="work-image-slider">
+                        <button class="slider-btn slider-btn-prev" aria-label="Previous image">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+            
+                        <div class="slider-container">
+                            <div class="slider-track">
+                                <img src="images/design/presentations.jpg" alt="Presentation slide 1" class="slider-image active">
+                                <img src="images/design/presentations-2.jpg" alt="Presentation slide 2" class="slider-image">
+                                <img src="images/design/presentations-3.jpg" alt="Presentation slide 3" class="slider-image">
+                                <img src="images/design/presentations-4.jpg" alt="Presentation slide 4" class="slider-image">
+                            </div>
+                        </div>
+            
+                        <button class="slider-btn slider-btn-next" aria-label="Next image">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+            
+                        <div class="slider-dots"></div>
                     </div>
+        
                     <div class="work-info">
                         <h3>Presentations</h3>
                         <p>clean slides / effective visual communication</p>
                         <span class="work-tag">Visual Design</span>
                     </div>
                 </div>
-                
-                <!-- Project 3 -->
-                <div class="work-item">
-                    <div class="work-image">
-                        <img src="images/design/branding.jpg" alt="Brand Identity">
-                    </div>
-                    <div class="work-info">
-                        <h3>Brand Identity</h3>
-                        <p>cohesive systems / memorable experiences</p>
-                        <span class="work-tag">Branding</span>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
 
     <!-- Beyond Work Section -->
     <section id="beyond" class="section-padding">
