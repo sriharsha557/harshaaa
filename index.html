@@ -17,15 +17,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-neutral-900 text-neutral-100">
-    <div class="wave-background">    </div>
+<body class="bg-neutral-900 text-white">
+    
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="assets/waves.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
     <!-- Simple Top Bar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-neutral-900/80 backdrop-blur-md border-b border-neutral-800">
+    <nav class="fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-lg font-mono font-bold text-white">HARSHAAA</a>
+            <a href="#home" class="text-lg font-mono font-bold text-white nav-gradient-btn">HARSHAAA</a>
             <div class="flex items-center gap-4">
                 <span class="text-xs text-green-400 font-mono hidden md:block">● Available for Freelance</span>
-                <a href="#contact" class="text-sm text-neutral-400 hover:text-white transition">Contact</a>
+                <a href="#contact" class="nav-gradient-btn text-sm">Contact</a>
                 <!-- Audio Control Button -->
                 <button id="audio-toggle" class="audio-toggle" aria-label="Toggle audio">
                     <svg class="audio-icon audio-muted" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -49,42 +57,26 @@
         Your browser does not support the audio element.
     </audio>
 
-    <!-- Animated Wave Background -->
-    <div class="wave-background">
-        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-            <defs>
-                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-            </defs>
-            <g class="wave-parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.02)" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.03)" />
-                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.04)" />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(255,255,255,0.05)" />
-            </g>
-        </svg>
-    </div>
-
-
     <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center pt-20 px-6">
         <div class="container mx-auto max-w-6xl">
             <div class="max-w-3xl">
                 <!-- CHANGE THIS: Your introduction -->
-                <p class="text-neutral-400 mb-6 text-lg">c/o</p>
+                <p class="text-neutral-200 mb-6 text-lg">c/o</p>
                 <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
                     Harsha
                 </h1>
-                <p class="text-xl md:text-2xl text-neutral-300 leading-relaxed mb-12">
+                <p class="text-xl md:text-2xl text-white leading-relaxed mb-12">
                     <!-- CHANGE THIS: Your story -->
                     asking myself the hard question of what i want from life showed me that 
-                    <span class="text-white">building things that matter</span>, whether through 
-                    <span class="text-white">design</span>, <span class="text-white">code</span>, 
-                    or <span class="text-white">experiences</span>, brings me purpose
+                    <span class="text-white font-semibold">building things that matter</span>, whether through 
+                    <span class="text-white font-semibold">design</span>, <span class="text-white font-semibold">code</span>, 
+                    or <span class="text-white font-semibold">experiences</span>, brings me purpose
                 </p>
                 
                 <!-- Keyboard Navigation -->
                 <div class="keyboard-grid mt-16">
-                    <p class="text-sm text-neutral-500 mb-6 font-mono">NAVIGATE WITH STYLE ↓</p>
+                    <p class="text-sm text-neutral-200 mb-6 font-mono">NAVIGATE WITH STYLE ↓</p>
                     
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-2xl">
                         <!-- HOME Key -->
@@ -227,7 +219,7 @@
     </section>
 
     <!-- Software Engineer Section -->
-    <section id="engineer" class="section-padding bg-neutral-950">
+    <section id="engineer" class="section-padding">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="max-w-3xl">
                 <span class="section-number">02</span>
@@ -266,7 +258,7 @@
                 <div class="project-row">
                     <div class="project-info-col">
                         <h3 class="text-3xl font-bold mb-4">MOOD</h3>
-                        <p class="text-neutral-400 mb-6">
+                        <p class="text-neutral-200 mb-6">
                             <!-- CHANGE THIS: Project description -->
                             AI-powered mood tracking and emotional wellness application. 
                             built with Streamlit and machine learning models to help people 
@@ -274,16 +266,16 @@
                         </p>
                         <div class="space-y-3 text-sm">
                             <div>
-                                <span class="text-neutral-500">Problem:</span>
-                                <span class="text-neutral-300"> accessible mental health tracking</span>
+                                <span class="text-neutral-300">Problem:</span>
+                                <span class="text-white"> accessible mental health tracking</span>
                             </div>
                             <div>
-                                <span class="text-neutral-500">Solution:</span>
-                                <span class="text-neutral-300"> AI sentiment analysis + insights</span>
+                                <span class="text-neutral-300">Solution:</span>
+                                <span class="text-white"> AI sentiment analysis + insights</span>
                             </div>
                             <div>
-                                <span class="text-neutral-500">Impact:</span>
-                                <span class="text-neutral-300"> real-time mood analytics</span>
+                                <span class="text-neutral-300">Impact:</span>
+                                <span class="text-white"> real-time mood analytics</span>
                             </div>
                         </div>
                         <span class="work-tag mt-6 inline-block">AI Application</span>
@@ -298,23 +290,23 @@
                 <div class="project-row project-row-reverse">
                     <div class="project-info-col">
                         <h3 class="text-3xl font-bold mb-4">EchoMe</h3>
-                        <p class="text-neutral-400 mb-6">
+                        <p class="text-neutral-200 mb-6">
                             <!-- CHANGE THIS: Project description -->
                             voice-based personal assistant leveraging NLP for seamless 
                             human-computer interaction. because typing is overrated
                         </p>
                         <div class="space-y-3 text-sm">
                             <div>
-                                <span class="text-neutral-500">Problem:</span>
-                                <span class="text-neutral-300"> low accuracy voice commands</span>
+                                <span class="text-neutral-300">Problem:</span>
+                                <span class="text-white"> low accuracy voice commands</span>
                             </div>
                             <div>
-                                <span class="text-neutral-500">Solution:</span>
-                                <span class="text-neutral-300"> advanced NLP + context awareness</span>
+                                <span class="text-neutral-300">Solution:</span>
+                                <span class="text-white"> advanced NLP + context awareness</span>
                             </div>
                             <div>
-                                <span class="text-neutral-500">Impact:</span>
-                                <span class="text-neutral-300"> 95%+ voice recognition accuracy</span>
+                                <span class="text-neutral-300">Impact:</span>
+                                <span class="text-white"> 95%+ voice recognition accuracy</span>
                             </div>
                         </div>
                         <span class="work-tag mt-6 inline-block">Voice AI</span>
@@ -329,23 +321,23 @@
                 <div class="project-row">
                     <div class="project-info-col">
                         <h3 class="text-3xl font-bold mb-4">SmartMeet</h3>
-                        <p class="text-neutral-400 mb-6">
+                        <p class="text-neutral-200 mb-6">
                             <!-- CHANGE THIS: Project description -->
                             intelligent meeting scheduler with automated note-taking. 
                             because nobody likes meeting overhead
                         </p>
                         <div class="space-y-3 text-sm">
                             <div>
-                                <span class="text-neutral-500">Problem:</span>
-                                <span class="text-neutral-300"> time wasted on coordination</span>
+                                <span class="text-neutral-300">Problem:</span>
+                                <span class="text-white"> time wasted on coordination</span>
                             </div>
                             <div>
-                                <span class="text-neutral-500">Solution:</span>
-                                <span class="text-neutral-300"> AI scheduling + auto transcription</span>
+                                <span class="text-neutral-300">Solution:</span>
+                                <span class="text-white"> AI scheduling + auto transcription</span>
                             </div>
                             <div>
-                                <span class="text-neutral-500">Impact:</span>
-                                <span class="text-neutral-300"> 50% reduction in overhead</span>
+                                <span class="text-neutral-300">Impact:</span>
+                                <span class="text-white"> 50% reduction in overhead</span>
                             </div>
                         </div>
                         <span class="work-tag mt-6 inline-block">Productivity</span>
@@ -436,7 +428,7 @@
     </section>
 
     <!-- Enthusiast Section -->
-    <section id="enthusiast" class="section-padding bg-neutral-950">
+    <section id="enthusiast" class="section-padding">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="max-w-3xl">
                 <span class="section-number">04</span>
@@ -462,7 +454,7 @@
                     </div>
                     <div class="vehicle-details">
                         <h3 class="text-2xl font-bold mb-2"><!-- CHANGE THIS -->My Daily Driver</h3>
-                        <p class="text-neutral-400 mb-4">
+                        <p class="text-neutral-200 mb-4">
                             <!-- CHANGE THIS: Vehicle story -->
                             reliable companion for daily commutes and weekend adventures. 
                             modified for comfort and performance
@@ -483,7 +475,7 @@
                     </div>
                     <div class="vehicle-details">
                         <h3 class="text-2xl font-bold mb-2"><!-- CHANGE THIS -->Weekend Warrior</h3>
-                        <p class="text-neutral-400 mb-4">
+                        <p class="text-neutral-200 mb-4">
                             <!-- CHANGE THIS: Vehicle story -->
                             built for long rides and mountain passes. every upgrade 
                             enhances the riding experience
@@ -499,7 +491,7 @@
             
             <!-- Trips -->
             <div class="mt-16">
-                <h3 class="text-xl font-bold mb-8 text-neutral-400">memorable journeys</h3>
+                <h3 class="text-xl font-bold mb-8 text-neutral-200">memorable journeys</h3>
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="trip-item">
                         <!-- CHANGE THIS: Trip photo -->
@@ -600,18 +592,18 @@
             
             <!-- Quote -->
             <div class="quote-box mt-16">
-                <p class="text-2xl font-light italic text-neutral-300">
+                <p class="text-2xl font-light italic text-white">
                     <!-- CHANGE THIS: Your personal quote -->
                     "life is a canvas, and every day is an opportunity to paint something beautiful. 
                     create with intention."
                 </p>
-                <span class="text-neutral-500 mt-4 block">— harsha</span>
+                <span class="text-neutral-200 mt-4 block">— harsha</span>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-neutral-950">
+    <section id="contact" class="section-padding">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="max-w-3xl">
                 <span class="section-number">06</span>
@@ -641,15 +633,15 @@
                 <!-- Social Links -->
                 <div class="flex gap-6 mt-12">
                     <!-- CHANGE THIS: Add your social links -->
-                    <a href="mailto:your.email@example.com" class="text-neutral-400 hover:text-white transition">email</a>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-neutral-400 hover:text-white transition">linkedin</a>
-                    <a href="https://github.com/yourprofile" target="_blank" class="text-neutral-400 hover:text-white transition">github</a>
-                    <a href="https://twitter.com/yourprofile" target="_blank" class="text-neutral-400 hover:text-white transition">twitter</a>
+                    <a href="mailto:your.email@example.com" class="text-neutral-200 hover:text-white transition">email</a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-neutral-200 hover:text-white transition">linkedin</a>
+                    <a href="https://github.com/yourprofile" target="_blank" class="text-neutral-200 hover:text-white transition">github</a>
+                    <a href="https://twitter.com/yourprofile" target="_blank" class="text-neutral-200 hover:text-white transition">twitter</a>
                 </div>
                 
                 <!-- Resume -->
                 <div class="mt-8">
-                    <a href="assets/resume.pdf" download class="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition">
+                    <a href="assets/resume.pdf" download class="inline-flex items-center gap-2 text-neutral-200 hover:text-white transition">
                         <span>download resume</span>
                         <span>→</span>
                     </a>
@@ -659,9 +651,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-neutral-800 py-12">
+    <footer class="py-12">
         <div class="container mx-auto px-6 text-center">
-            <p class="text-neutral-500 text-sm font-mono">
+            <p class="text-neutral-200 text-sm font-mono">
                 © <span id="current-year"></span> harshaaa / designed & built with care
             </p>
         </div>
