@@ -509,15 +509,17 @@ function initVideoSwitcher() {
     const videoSwitcher = document.getElementById('video-switcher');
     const bgVideo = document.getElementById('bg-video');
     const audioElement = document.getElementById('background-audio');
-    const videoLabel = videoSwitcher.querySelector('.video-label');
+    const wavesLabel = videoSwitcher ? videoSwitcher.querySelector('.vs-waves') : null;
+    const mountainsLabel = videoSwitcher ? videoSwitcher.querySelector('.vs-mountains') : null;
     
-    if (!videoSwitcher || !bgVideo || !audioElement) return;
+    if (!videoSwitcher || !bgVideo || !audioElement || !wavesLabel || !mountainsLabel) return;
     
     // Track current video state
     let currentVideo = 'waves'; // Default is waves
     
-    // Set initial label to show next video
-    videoLabel.textContent = 'Mountains';
+    // Set initial active label
+    wavesLabel.classList.add('active-video');
+    mountainsLabel.classList.remove('active-video');
     
     videoSwitcher.addEventListener('click', function() {
         // Toggle between waves and mountains
@@ -538,13 +540,15 @@ function initVideoSwitcher() {
             videoSource.src = 'assets/mountains.mp4';
             audioElement.src = 'assets/moutains.mp3'; // Note: file has typo "moutains"
             currentVideo = 'mountains';
-            videoLabel.textContent = 'Waves'; // Show next video to switch to
         } else {
             videoSource.src = 'assets/waves.mp4';
             audioElement.src = 'assets/waves-music.mp3';
             currentVideo = 'waves';
-            videoLabel.textContent = 'Mountains'; // Show next video to switch to
         }
+
+        // Highlight active video label
+        wavesLabel.classList.toggle('active-video', currentVideo === 'waves');
+        mountainsLabel.classList.toggle('active-video', currentVideo === 'mountains');
         
         // Reload video
         bgVideo.load();
