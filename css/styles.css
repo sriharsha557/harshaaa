@@ -191,7 +191,45 @@ nav a:hover {
 }
 
 .audio-toggle.playing {
-    animation: audio-pulse 2s ease-in-out infinite;
+    /* Animation removed */
+}
+
+/* ============= VIDEO SWITCHER BUTTON ============= */
+.video-switcher {
+    background: transparent;
+    border: 1px solid #ffffff;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #ffffff;
+    outline: none;
+    box-shadow: none;
+}
+
+.video-switcher:hover {
+    border-color: #00aaff;
+    color: #00aaff;
+    transform: scale(1.05);
+}
+
+.video-switcher:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.video-switcher:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
+.video-label {
+    display: inline-block;
 }
 
 @keyframes audio-pulse {

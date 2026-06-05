@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initKeyboardNavigation();
     initAudioControl();
     initVideoBackground();
+    initVideoSwitcher();
     initToolsSection();
 });
 
@@ -267,7 +268,7 @@ function initAudioControl() {
         if (audio.paused) {
             audio.play().then(() => {
                 audioToggle.classList.add('playing');
-                showNotification('Ocean waves music enabled', 'info');
+                showNotification('Audio turned on', 'info');
             }).catch(error => {
                 console.error('Audio playback failed:', error);
                 showNotification('Could not play audio', 'error');
@@ -275,7 +276,7 @@ function initAudioControl() {
         } else {
             audio.pause();
             audioToggle.classList.remove('playing');
-            showNotification('Audio muted', 'info');
+            showNotification('Audio turned off', 'info');
         }
     });
     
@@ -502,3 +503,59 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// ============= VIDEO SWITCHER ============= //
+function initVideoSwitcher() {
+    const videoSwitcher = document.getElementById('video-switcher');
+    const bgVideo = document.getElementById('bg-video');
+    const audioElement = document.getElementById('background-audio');
+    const videoLabel = videoSwitcher.querySelector('.video-label');
+    
+    if (!videoSwitcher || !bgVideo || !audioElement) return;
+    
+    // Track current video state
+    let currentVideo = 'waves'; // Default is waves
+    
+    // Set initial label to show next video
+    videoLabel.textContent = 'Mountains';
+    
+    videoSwitcher.addEventListener('click', function() {
+        // Toggle between waves and mountains
+        if (currentVideo === 'waves') {
+            switchToVideo('mountains');
+        } else {
+            switchToVideo('waves');
+        }
+    });
+    
+    function switchToVideo(videoType) {
+        // Update video source
+        const videoSource = bgVideo.querySelector('source');
+        
+        if (videoType === 'mountains') {
+            videoSource.src = 'assets/mountains.mp4';
+            audioElement.src = 'assets/moutains.mp3'; // Note: file has typo "moutains"
+            currentVideo = 'mountains';
+            videoLabel.textContent = 'Waves'; // Show next video to switch to
+        } else {
+            videoSource.src = 'assets/waves.mp4';
+            audioElement.src = 'assets/waves-music.mp3';
+            currentVideo = 'waves';
+            videoLabel.textContent = 'Mountains'; // Show next video to switch to
+        }
+        
+        // Reload video
+        bgVideo.load();
+        bgVideo.play().catch(error => {
+            console.error('Video playback error:', error);
+        });
+        
+        // If audio is playing, update to new audio and continue playing
+        if (!audioElement.paused) {
+            audioElement.load();
+            audioElement.play().catch(error => {
+                console.error('Audio playback error:', error);
+            });
+        }
+    }
+}
