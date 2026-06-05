@@ -529,7 +529,9 @@ function initVideoSwitcher() {
     });
     
     function switchToVideo(videoType) {
-        // Update video source
+        // Capture audio state before changing sources
+        const wasAudioPlaying = !audioElement.paused;
+
         const videoSource = bgVideo.querySelector('source');
         
         if (videoType === 'mountains') {
@@ -550,8 +552,8 @@ function initVideoSwitcher() {
             console.error('Video playback error:', error);
         });
         
-        // If audio is playing, update to new audio and continue playing
-        if (!audioElement.paused) {
+        // Resume audio only if it was playing before the switch
+        if (wasAudioPlaying) {
             audioElement.load();
             audioElement.play().catch(error => {
                 console.error('Audio playback error:', error);
